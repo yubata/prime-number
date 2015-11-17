@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+#define MAX_NUM 1000000
+
+int main(){
+	int i,j,n,k;
+	for (i = 1; i <= MAX_NUM; i++){
+		n = 2;
+		k = i / 2;
+		if ((i % 2) != 0 && (i % 3) != 0){
+			for (j = 2; j <= k; j++){
+				if (i%j != 0)
+					n = i;
+				else{
+					n = 0;
+					break;
+				}
+			}
+		}
+		else
+			n = 0;
+		if (i != 1 && i != 2 && n != 0){
+			printf("%d\n", i);
+		}	
+		else if (i != 1 && n!=0){
+			printf("%d\n", i);
+		}
+	}
+}
